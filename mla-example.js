@@ -44,7 +44,6 @@ async function run(ws) {
     const browser = await puppeteer.connect({browserWSEndpoint: ws, defaultViewport:null});
     const page = await browser.newPage();
     await page.goto('https://multilogin.com');
-    await page.screenshot({ path: `/home/${process.env.USER}/Desktop/multiloginScreenshot.png` });
     await browser.close();
   } catch(err){
     console.log(err);
